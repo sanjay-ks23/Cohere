@@ -1,1 +1,4 @@
+# Training Neural Networks at any scale
+
+# This was my log of the session from Tony Silveti Falls.
 
