@@ -1,4 +1,46 @@
-# Training Neural Networks at any scale
+Training Neural Networks at any scale
 
-# This was my log of the session from Tony Silveti Falls.
+This was my log of the session from Tony Silveti Falls.
 
+Training NN is basically solving Stochastic optimization problems.
+
+What has been done so far:
+Till now we use SGD, we use a euclidean geometry to do this:
+Two improvemnst:
+on the fly adaptations: like adam,rmsprop etc.
+A priori adaptations: methods with a specific geometry in mind
+
+Started with Adam:
+instead of Euclidean norm to mahalanobis geometry.
+
+Short comings: Bewcause of on the fly - we need to spend some time to store the memory when the model size increases
+Adam is unaware of the architecture whether it is the ifrst or the last layer, its dimentionality, matrix structures etc. 
+
+Failure to learn features as width scales: with the standard paramterization, which is initial weight initalization etc, we can get stuck in the lazy regime and stuck in this intial weights.(NTK: NEURO TRAINING KERNEL) 
+THE LOSS IS REDUCED but hasnt really learned anything.
+
+Now to the priori adaptations:
+we bypass the lazy trainig regime, but letting adam learn about the architecture prior to the training.
+
+Model of a neural Network:
+
+we consider a L layer fully connected neural network with a inut a belongs to R(p) and an output b belongs to R:
+
+Feature learning:
+we can determine the features at the lth layer just after one iteratin of traiingi or partual training.
+
+spectral conditions for feature learning:
+spectral norm: th esingle largest value in the weight matrix.
+
+Heuristically, if we control the scaled operator norm layer by layer we can make the feature learnign process as we scale width.
+
+statergy for an architecture aware optimizer for nueral network.
+
+
+steepest descent:
+
+Conditional gradient algorithms:
+helps solve smooth optimization problems, 
+
+Learn about stochastic conditional Gradient method that uses momentum.
+SCG is just uSCG with weight decay 
