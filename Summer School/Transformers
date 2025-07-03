@@ -1,1 +1,40 @@
+The brilliance of the Attention is All you need has no bounds, 
 
+Why transformers?
+we started with RNNs, to have a sequential processing to predict the next output, we need some memory to be added to this. the issue with this  was exploding and vanishing gradients.Issues with long term dependecies.
+
+These issues were solved by LSTM, we introduced something called gates in an RNN model, using only some % of long term memory
+tanh -> acts as memory that needs to be considered
+sigmoid -> 
+LSTM doesnt scale well for long term dependencies.
+
+Then came Bi-LSTM and Bi-RNNs.
+
+Transfomers:
+Architecture: most important is attention. Multiple types of attentions
+Tokenizer:
+The most fundamental yet important part
+Then comes word embedings:
+these tokens are then converted to a numerical form in vectors and in vector space with the vocabulary. The traditional models used the models to get the word embeddings but nowadays we use predefined word embeddings.
+
+Then comes encodings:
+Psotional encoding: to have an understanding of the positon of the token in the vector
+
+Attention :
+self, masked, cross.
+sefl attentions:
+in encoder: understanding the token relation with the help of Q,K,V and then pass them onto a softmax function. 
+masked langugae modelling:
+usedin encoder models(Self supervised)
+predicts the masked words -> builds contextual understanding , advanced version of self attention.
+
+and masked attention: used in decoder oinly models 
+GPT usesinly decoders 
+then comes cross attention: used in decoders 
+
+
+Decoder models can be used only for story generation, dialogue generation, few shot and zero shot.
+
+encoder models good for NER, classification, MLM, similarity search(RAG)
+
+REsidual Connections and Layer Norm:
